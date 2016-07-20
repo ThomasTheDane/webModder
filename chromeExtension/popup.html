@@ -14,6 +14,15 @@ div {
 #installedList{
 	background-color: #e3e3e3;
 	border-radius: 10px;
+    max-height: 160px;
+    overflow-y: scroll;
+}
+
+#availableList{
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    max-height: 160px;
+    overflow-y: scroll;
 }
 
 .header {
@@ -32,6 +41,7 @@ div {
 	font-size: 1.7em;
 	margin-left: 5px;
 	margin-top: 5px;
+    padding-left: 0px;
 }
 
 .listingDescription{
@@ -46,23 +56,23 @@ div {
 }
 
 .continueArrow{
-	margin-top: 5px;
-	width: 20px;
-	height: 20px;
-	margin-top: 5px;
+	width: 30px;
+	height: 30px;
+	margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 3px;
 }
 
 .removeIcon{
-	margin-top: 5px;
-	width: 24px;
-	height: 24px;
-	margin-top: 5px;
-	margin-left: 5px;
+	width: 20px;
+	height: 20px;
+	margin-top: 10px;
+	margin-left: 1px;
 	padding-right: 0px;
 }
 
 .listingAuthor{
-	margin-left: 5px;
+	margin-left: 0px;
 	padding-left: 5px;
 	font-size: .8em;
 	color: #818181;
@@ -70,12 +80,9 @@ div {
 	margin-bottom: 3px;
 }
 
-/*.removeIconHolder{
-	padding: 0px;
-}
-*/
-.col-xs-10{
+.listingTopArea{
 	padding-left: 5px;
+    padding-right: 5px;
 }
 
 .col-xs-12{
@@ -96,10 +103,45 @@ hr{
 	border-top: 1px solid #c1c1c1;
 }
 
+.downloadContainer{
+    padding-left: 10px;
+}
+
+.downloadIcon{
+    margin-top: 10px;
+    width: 30px;
+}
+
+#developerCheck{
+    font-size: 1.2em;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 8px;
+    cursor: hand;
+}
+
+#developerCheckbox{
+    width: 18px;
+}
+
+#makeModButton{
+
+}
+
+#developerSection{
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 268px;
+    display: none;
+}
+
 </style>
 
 
-
+<script src="jquery-3.0.0.min.js"></script>
 
 <script src="popup.js"></script>
 
@@ -107,46 +149,76 @@ hr{
 	<h3 class="title">Web Modder</h3>
 	<div id="homeScreen">
 		<div id="installed">
-			<h4 class="header">Installed</h4>
+			<h4 class="header">Installed For This Website</h4>
 			<div id="installedList">
 				<div class="modListing">
 					<div class="row">
-						<div class="col-xs-10">
-							<div class="listingTitle">A title</div>
-						</div>
-						<!-- <div class="col-xs-1">
-							<img class="continueArrow" src="http://image.flaticon.com/icons/svg/60/60758.svg">
-						</div> -->
-						<div class="col-xs-2 removeIconHolder">
-							<img class="removeIcon" src="https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-512.png">
-						</div>
-					</div>
-					<div class="row">
-						<div class="listingAuthor">
-							By: Sir Ian Dickbutt
-						</div>	
-					</div>
-					<div class="row">
+						<div class="col-xs-10 listingTopArea">
+                            <div class="row">
+                                <div class="col-xs-1">
+                                    <img class="removeIcon" src="https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-512.png">
+                                </div>
+                                <div class="listingTitle col-xs-10">A title</div>
+                            </div>
+                            <div class="listingAuthor">
+                                By: Sir Ian Dickbutt
+                            </div>
+
+                        </div>
+                        <div class="col-xs-2">
+                            <img class="continueArrow" src="http://image.flaticon.com/icons/svg/60/60758.svg">
+                        </div>
+						<!--<div class="col-xs-1 removeIconHolder">-->
+							<!--<img class="removeIcon" src="https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-512.png">-->
+						<!--</div>-->
+
+                    </div>
+
+                    <div class="row">
 						<div class="col-xs-12">
 							<div class="listingDescription">200 char max</div>
 						</div>
 					</div>
 				</div>
-				<hr>
 			</div>
 		</div>
 		<div id="available">
+            <h4 class="header">Available For This Website</h4>
+            <div id="availableList">
+                <div class="availableModListing">
+                    <row>
+                        <div class="col-xs-8">
+                            <div class="listingTitle">A title</div>
+                            <div class="listingAuthor">
+                                By: Sir Ian Dickbutt
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <img class="continueArrow" src="http://image.flaticon.com/icons/svg/60/60758.svg">
+                        </div>
+                        <div class="col-xs-2 downloadContainer">
+                            <img class="downloadIcon" src="downloadIcon.png">
+                        </div>
 
-		</div>
+                    </row>
+                </div>
+            </div>
+        </div>
 		<div id="request">
 
 		</div>
-		<div id="developerCheck">
+        <div class="row">
+            <div id="developerCheck">
+                <img id="developerCheckbox" src="checkboxEmpty.png">
+                I'm a developer
+            </div>
+        </div>
+        <div class="row" id="developerSection">
 
-		</div>
-		<div id="addMod">
-		<button type="button" class="btn btn-success"></button>
-		</div>
+            <button type="button" id="makeModButton" class="btn btn-success">Make a Mod</button>
+            <button type="button" id="manageModsButton" class="btn btn-info">Share/Manage Mods</button>
+
+        </div>
 	</div>
 	<div id="addModScreen">
 
