@@ -1,0 +1,154 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<style>
+
+div {
+	/*border: 1px solid black;*/
+}
+
+#main{
+	margin: 10px;
+	width: 300px;
+}
+
+#installedList{
+	background-color: #e3e3e3;
+	border-radius: 10px;
+}
+
+.header {
+	margin-left: 2px;
+	margin-bottom: 5px;
+}
+
+.title{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-weight: bold;
+}
+
+.listingTitle{
+	font-size: 1.7em;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.listingDescription{
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-top: 2px;
+
+	line-height: 1.1em;
+
+	max-height: 100px;
+}
+
+.continueArrow{
+	margin-top: 5px;
+	width: 20px;
+	height: 20px;
+	margin-top: 5px;
+}
+
+.removeIcon{
+	margin-top: 5px;
+	width: 24px;
+	height: 24px;
+	margin-top: 5px;
+	margin-left: 5px;
+	padding-right: 0px;
+}
+
+.listingAuthor{
+	margin-left: 5px;
+	padding-left: 5px;
+	font-size: .8em;
+	color: #818181;
+	line-height: .9em;
+	margin-bottom: 3px;
+}
+
+/*.removeIconHolder{
+	padding: 0px;
+}
+*/
+.col-xs-10{
+	padding-left: 5px;
+}
+
+.col-xs-12{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.col-xs-1{
+	padding: 0px;
+}
+
+.row{
+	margin: 0px;
+}
+
+hr{
+	margin: 0px;
+	border-top: 1px solid #c1c1c1;
+}
+
+</style>
+
+
+
+
+<script src="popup.js"></script>
+
+<div id="main">
+	<h3 class="title">Web Modder</h3>
+	<div id="homeScreen">
+		<div id="installed">
+			<h4 class="header">Installed</h4>
+			<div id="installedList">
+				<div class="modListing">
+					<div class="row">
+						<div class="col-xs-10">
+							<div class="listingTitle">A title</div>
+						</div>
+						<!-- <div class="col-xs-1">
+							<img class="continueArrow" src="http://image.flaticon.com/icons/svg/60/60758.svg">
+						</div> -->
+						<div class="col-xs-2 removeIconHolder">
+							<img class="removeIcon" src="https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-512.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="listingAuthor">
+							By: Sir Ian Dickbutt
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="listingDescription">200 char max</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<div id="available">
+
+		</div>
+		<div id="request">
+
+		</div>
+		<div id="developerCheck">
+
+		</div>
+		<div id="addMod">
+		<button type="button" class="btn btn-success"></button>
+		</div>
+	</div>
+	<div id="addModScreen">
+
+	</div>
+</div>

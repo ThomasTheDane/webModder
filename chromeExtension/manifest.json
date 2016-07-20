@@ -1,0 +1,21 @@
+{
+  "name": "Mods for the web",
+  "description": "Paginate several pages into one",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+        "matches": ["*://*/*"],
+        "js": ["jquery-3.0.0.min.js", "content_script.js"],
+        "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Web Modder",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
