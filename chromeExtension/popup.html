@@ -14,14 +14,14 @@ div {
 #installedList{
 	background-color: #e3e3e3;
 	border-radius: 10px;
-    max-height: 160px;
+    max-height: 114px;
     overflow-y: scroll;
 }
 
 #availableList{
     background-color: #e3e3e3;
     border-radius: 10px;
-    max-height: 160px;
+    max-height: 114px;
     overflow-y: scroll;
 }
 
@@ -37,38 +37,46 @@ div {
 	font-weight: bold;
 }
 
+.listingTitleArea{
+    padding-left: 3px;
+}
+
 .listingTitle{
 	font-size: 1.7em;
 	margin-left: 5px;
-	margin-top: 5px;
-    padding-left: 0px;
+	margin-top: -2px;
 }
 
 .listingDescription{
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 	margin-top: 2px;
 
-	line-height: 1.1em;
+	line-height: 1.0em;
+    display: none;
+}
 
-	max-height: 100px;
+.continueArrowHolder{
+    border-right: 1px solid #818181;
+    margin-top: 13px;
+    padding-left: 15px;
+    padding-right: 0px;
 }
 
 .continueArrow{
 	width: 30px;
 	height: 30px;
-	margin-top: 10px;
     margin-left: 0px;
-    margin-right: 3px;
+}
+
+.removeIconHolder{
+    padding-left: 10px;
 }
 
 .removeIcon{
-	width: 20px;
-	height: 20px;
-	margin-top: 10px;
-	margin-left: 1px;
-	padding-right: 0px;
+	width: 30px;
+    margin-top: 13px;
 }
 
 .listingAuthor{
@@ -78,20 +86,16 @@ div {
 	color: #818181;
 	line-height: .9em;
 	margin-bottom: 3px;
+    margin-top: -3px;
 }
 
-.listingTopArea{
-	padding-left: 5px;
-    padding-right: 5px;
-}
-
-.col-xs-12{
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.col-xs-1{
-	padding: 0px;
+.listingPopularity{
+    margin-left: 0px;
+    padding-left: 5px;
+    font-size: .8em;
+    color: #616161;
+    line-height: .9em;
+    margin-bottom: 5px;
 }
 
 .row{
@@ -108,7 +112,7 @@ hr{
 }
 
 .downloadIcon{
-    margin-top: 10px;
+    margin-top: 13px;
     width: 30px;
 }
 
@@ -151,57 +155,13 @@ hr{
 		<div id="installed">
 			<h4 class="header">Installed For This Website</h4>
 			<div id="installedList">
-				<div class="modListing">
-					<div class="row">
-						<div class="col-xs-10 listingTopArea">
-                            <div class="row">
-                                <div class="col-xs-1">
-                                    <img class="removeIcon" src="https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-512.png">
-                                </div>
-                                <div class="listingTitle col-xs-10">A title</div>
-                            </div>
-                            <div class="listingAuthor">
-                                By: Sir Ian Dickbutt
-                            </div>
 
-                        </div>
-                        <div class="col-xs-2">
-                            <img class="continueArrow" src="http://image.flaticon.com/icons/svg/60/60758.svg">
-                        </div>
-						<!--<div class="col-xs-1 removeIconHolder">-->
-							<!--<img class="removeIcon" src="https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-512.png">-->
-						<!--</div>-->
-
-                    </div>
-
-                    <div class="row">
-						<div class="col-xs-12">
-							<div class="listingDescription">200 char max</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div id="available">
             <h4 class="header">Available For This Website</h4>
             <div id="availableList">
-                <div class="availableModListing">
-                    <row>
-                        <div class="col-xs-8">
-                            <div class="listingTitle">A title</div>
-                            <div class="listingAuthor">
-                                By: Sir Ian Dickbutt
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-                            <img class="continueArrow" src="http://image.flaticon.com/icons/svg/60/60758.svg">
-                        </div>
-                        <div class="col-xs-2 downloadContainer">
-                            <img class="downloadIcon" src="downloadIcon.png">
-                        </div>
 
-                    </row>
-                </div>
             </div>
         </div>
 		<div id="request">
